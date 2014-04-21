@@ -1,0 +1,111 @@
+#include <stdio.h>
+#define V 21
+#define H 75
+
+void INICIO (char CAMPO [V][H],int PELX, int PELY, int INIJUGA, int FINJUGA, int INIIA, int FINIA);
+void BORDE (char CAMPO [V][H]);
+void RAQJUGA (char CAMPO [V][H], int INIJUGA,int FINJUGA);
+void RAQIA (char CAMPO [V][H], int INIIA,int FINIA);
+void PEL(char CAMPO [V][H],int PELX,int PELY);
+void LEERCAMP (char CAMPO[V][H]);
+
+int main()
+ {
+
+
+	int PELX,PELY,INIJUGA,FINJUGA,INIIA,FINIA;
+	
+	char CAMPO [V][H]; 
+	
+	PELX=35;
+	PELY=11;
+	
+	INIJUGA=8;
+	FINJUGA=12;
+	
+	INIIA=8;
+	FINIA=12;
+	
+    INICIO (CAMPO,PELX,PELY,INIJUGA,FINJUGA,INIIA,FINIA);
+	LEERCAMP(CAMPO);
+	
+	system("pause");
+	return 0;
+	
+}
+
+void INICIO (char CAMPO [V][H],int PELX, int PELY, int INIJUGA, int FINJUGA, int INIIA, int FINIA)
+{
+	BORDE (CAMPO);
+	RAQJUGA (CAMPO,INIJUGA,FINJUGA);
+	RAQIA (CAMPO,INIIA,FINIA);
+	PEL (CAMPO , PELX,PELY);
+		
+}
+
+void BORDE (char CAMPO [V][H]){
+
+int i,j;
+
+	
+for (i=0; i<V; i++){
+	for(j=0;j<H;j++){
+		if(i==0 || i==V-1){
+			CAMPO [i][j]='-';
+		}
+		else if (j==0 || j== H-1){
+			CAMPO [i][j]='|';
+		}
+		else{
+			CAMPO [i][j]=' ';
+		}
+		
+	}
+}
+}
+
+
+void RAQJUGA (char CAMPO [V][H], int INIJUGA,int FINJUGA){
+	int i,j;
+	
+	for ( i= INIJUGA ; i<= FINJUGA; i++){
+		for (j=2;j=3; j++){
+	
+			
+			CAMPO[i][j]='8';
+		}		
+	}
+}
+
+void RAQIA (char CAMPO [V][H], int INIIA,int FINIA){
+		
+		int i,j;
+		
+		for (i = INIIA; i<=FINIA; i++){
+			for (j=H -4;j = H-3; j++){
+			
+				CAMPO[i][j]='8';
+			}
+		}	
+		
+	}
+	
+	
+	
+void PEL(char CAMPO [V][H],int PELX,int PELY){
+	
+	CAMPO[PELX][PELY]='O';
+}
+
+void LEERCAMP (char CAMPO[V][H]){
+	int i, j;
+	
+	for (i = 0; i < V; i++){
+		for (j = 0; j < H; j++){
+			printf("%c",CAMPO[i][j]);
+		}
+		printf("\n");
+	}
+}
+		
+		
