@@ -1,0 +1,455 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+
+
+void main ()
+{
+
+int sal= 0;
+int col, fi,col2,fi2;
+int conta=0,T, T2, T3,T4, tiempo=800;
+int E,E2, E3,E4;
+int Choca=0, Eli;
+char x, d='P';
+
+do
+{  sal=0;
+	system("cls");
+	printf("Menu de Opciones \n\n");
+	printf("1.inicar juego\n");
+
+	printf("2.Instrucciones \n");
+	printf("3.salir\n");
+	printf("Escoja la opcion a escojer: ");
+	scanf("%d",&sal);
+
+	switch(sal)
+	{
+		case 1:
+			system("cls");
+
+ {
+conta=0;
+Eli=5;
+Choca=0;
+d='P';
+
+srand(time(NULL));
+clrscr();
+
+
+
+//*recuadros*//
+
+col=4;
+while(col<70)
+{
+textcolor(2);
+gotoxy(col,3); cprintf("Í");
+gotoxy(col,10); cprintf("Í");
+
+col++;
+}
+
+textcolor(2);
+gotoxy(3,3); cprintf("É");
+gotoxy(3,10); cprintf("È");
+gotoxy(69,10); cprintf("¼");
+gotoxy(69,3); cprintf("»");
+gotoxy(2,1); printf("Ú");
+gotoxy(2,15); printf("À");
+gotoxy(72,15); printf("Ù");
+gotoxy(72,1); printf("¿");
+
+fi=4;
+while(fi<10)
+{
+textcolor(3);
+gotoxy(3,fi); cprintf("º");
+gotoxy(69,fi); cprintf("º");
+
+fi++;
+}
+
+/*CUADRO EXTERNO*/
+fi2=2;
+while(fi2<15)
+{
+textcolor(7);
+gotoxy(2,fi2); cprintf("³");
+gotoxy(72,fi2); cprintf("³");
+
+fi2++;
+}
+
+col2=3;
+while(col2<72)
+{
+textcolor(7);
+gotoxy(col2,1); cprintf("Ä");
+gotoxy(col2,15); cprintf("Ä");
+col2++;
+}
+
+//*barras*//
+
+T=13;
+T2=26;
+T3=39;
+T4=60;
+//*Edificios*//
+E=11;
+E2=28;
+E3=49;
+E4=60;
+//*Elicoptero*//
+
+
+//*imprimir Elicoptero*)
+
+gotoxy(5,Eli); printf("à");
+
+
+
+//*edificio 1*//
+gotoxy(E,9); printf("Û");
+gotoxy(E,8); printf("Û");
+
+gotoxy(T,4); printf("Û");
+gotoxy(T,5); printf("Û");
+
+/*EDOIFICIO 2*/
+gotoxy(E2,9); printf("Û");
+gotoxy(E2,8); printf("Û");
+
+//*Torre 2*//
+gotoxy(T2,4); printf("Û");
+gotoxy(T2,5); printf("Û");
+
+
+//*Edificio 3*//
+gotoxy(E3,9); printf("Û");
+gotoxy(E3,8); printf("Û");
+gotoxy(E3,7); printf("Û");
+
+
+//*Torre 3*//
+
+gotoxy(T3,4); printf("Û");
+gotoxy(T3,5); printf("Û");
+gotoxy(T3,6); printf("Û");
+
+/*TORRE 4 Y EDIFICIO*/
+gotoxy(E4,9); printf("Û");
+
+gotoxy(T4,4); printf("Û");
+gotoxy(T4,5); printf("Û");
+gotoxy(T4,6); printf("Û");
+gotoxy(T4,7); printf("Û");
+
+while(Choca==0)
+{
+
+gotoxy(T,4); printf(" ");
+gotoxy(T,5); printf(" ");
+
+
+gotoxy(T2,4); printf(" ");
+gotoxy(T2,5); printf(" ");
+
+
+gotoxy(T3,4); printf(" ");
+gotoxy(T3,5); printf(" ");
+gotoxy(T3,6); printf(" ");
+
+
+gotoxy(E,9); printf(" ");
+gotoxy(E,8); printf(" ");
+
+
+gotoxy(E2,9); printf(" ");
+gotoxy(E2,8); printf(" ");
+
+gotoxy(E3,9); printf(" ");
+gotoxy(E3,8); printf(" ");
+gotoxy(E3,7); printf(" ");
+
+/*TORRE 4 Y EDIFICIO*/
+gotoxy(E4,9); printf(" ");
+
+gotoxy(T4,4); printf(" ");
+gotoxy(T4,5); printf(" ");
+gotoxy(T4,6); printf(" ");
+gotoxy(T4,7); printf(" ");
+
+gotoxy(4,Eli); printf(" ");
+
+
+T=T-1;
+T2=T2-1;
+T3=T3-1;
+
+E=E-1;
+E2=E2-1;
+E3=E3-1;
+
+
+conta=conta+1;
+
+
+
+//*Torres*//
+
+textcolor(11); gotoxy(T,4); cprintf("Û");
+textcolor(11); gotoxy(T,5); cprintf("Û");
+
+
+if(T==4)
+{
+gotoxy(T,4); printf(" ");
+gotoxy(T,5); printf(" ");
+
+
+T=68;
+textcolor(11); gotoxy(T,4); cprintf("Û");
+textcolor(11); gotoxy(T,5); cprintf("Û");
+
+
+if((Eli==4)||(Eli==5))
+{
+Choca=Choca+1;
+}
+}
+
+textcolor(11); gotoxy(T2,4); cprintf("Û");
+textcolor(11); gotoxy(T2,5); cprintf("Û");
+
+if((T2==4)&&(T2==5))
+{
+
+gotoxy(T2,4); printf(" ");
+gotoxy(T2,5); printf(" ");
+
+
+T2=68;
+
+
+  textcolor(11); gotoxy(T2,4); cprintf("Û");
+  textcolor(11); gotoxy(T2,5); cprintf("Û");
+
+
+if(Eli>=4)
+Choca=Choca+1;
+}
+
+textcolor(11); gotoxy(T3,4); cprintf("Û");
+textcolor(11); gotoxy(T3,5); cprintf("Û");
+textcolor(11); gotoxy(T3,6); cprintf("Û");
+
+if(T3==4)
+{
+gotoxy(T3,4); printf(" ");
+gotoxy(T3,5); printf(" ");
+gotoxy(T3,6); printf(" ");
+
+T3=68;
+   textcolor(11); gotoxy(T3,4); cprintf("Û");
+   textcolor(11); gotoxy(T3,5); cprintf("Û");
+   textcolor(11); gotoxy(T3,6); cprintf("Û");
+
+if((Eli>=4)&&(Eli<=6))
+{
+Choca=Choca+1;
+}
+}
+
+textcolor(20); gotoxy(E,9); cprintf("Û");
+textcolor(20); gotoxy(E,8); cprintf("Û");
+
+if(E==4)
+{
+gotoxy(E,9); printf(" ");
+gotoxy(E,8); printf(" ");
+  E=68;
+
+  textcolor(20); gotoxy(E,9); cprintf("Û");
+  textcolor(20); gotoxy(E,8); cprintf("Û");
+
+
+if(Eli>=8)
+{
+Choca=Choca+1;
+}
+}
+
+textcolor(20); gotoxy(E2,9); cprintf("Û");
+textcolor(20); gotoxy(E2,8); cprintf("Û");
+
+if(E2==4)
+{
+gotoxy(E2,9); printf(" ");
+gotoxy(E2,8); printf(" ");
+
+
+ E2=68;
+
+  textcolor(20); gotoxy(E2,9); cprintf("Û");
+  textcolor(20); gotoxy(E2,8); cprintf("Û");
+
+
+if((Eli==8)||(Eli==9))
+{
+Choca=Choca+1;
+}
+}
+
+textcolor(20); gotoxy(E3,9); cprintf("Û");
+textcolor(20); gotoxy(E3,8); cprintf("Û");
+textcolor(20); gotoxy(E3,7); cprintf("Û");
+
+
+if(E3==4)
+{
+gotoxy(E3,9); printf(" ");
+gotoxy(E3,8); printf(" ");
+gotoxy(E3,7); printf(" ");
+
+
+ E3=68;
+
+  textcolor(20); gotoxy(E3,9); cprintf("Û");
+  textcolor(20); gotoxy(E3,8); cprintf("Û");
+  textcolor(20); gotoxy(E3,7); cprintf("Û");
+
+
+if((Eli>=7)&&(Eli<=9))
+{
+Choca=Choca+1;
+}
+}
+
+gotoxy(E4,9); printf("Û");
+
+if(E4==4)
+{
+gotoxy(E4,9); printf(" ");
+
+
+ E4=68;
+
+  textcolor(20); gotoxy(E4,9); cprintf("Û");
+
+
+if(Eli==9)
+{
+Choca=Choca+1;
+}
+}
+
+gotoxy(T4,4); printf("Û");
+gotoxy(T4,5); printf("Û");
+gotoxy(T4,6); printf("Û");
+
+if(E4==4)
+{
+ gotoxy(T4,4); printf(" ");
+ gotoxy(T4,5); printf(" ");
+ gotoxy(T4,6); printf(" ");
+
+
+ E4=68;
+
+  textcolor(20); gotoxy(T4,4); cprintf("Û");
+		 gotoxy(T4,5); printf("Û");
+		 gotoxy(T4,6); printf("Û");
+		 gotoxy(T4,7); printf("Û");
+
+
+if((Eli>=4)&&(Eli<=7))
+{
+Choca=Choca+1;
+}
+}
+
+if(Eli>9)
+{
+Choca=Choca+1;
+}
+
+if(Eli==3)
+{
+Choca=Choca+1;
+}
+//*hay tecla*//
+if(kbhit())
+{
+x=getch();
+
+switch(x)
+  {
+    case 'P':  if(d!='P')
+    d=x;   break;
+    case 'H': if(d!='H')
+    d=x; break;
+ }
+ }
+  gotoxy(5,Eli); printf(" ");
+
+switch(d)
+{
+case 'H': Eli--; break;
+case 'P': Eli++; break;
+}
+gotoxy(5,Eli); printf("à");
+delay(400);
+
+}
+
+textcolor(6);
+gotoxy(4,11); printf("tu puntaje es");
+gotoxy(3,12); cprintf("ÚÄÄÄÄÄ¿");
+gotoxy(3,13); cprintf("³     ³");
+gotoxy(3,14); cprintf("ÀÄÄÄÄÄÙ");
+textcolor(0); gotoxy(5,13); printf("%d",conta);
+
+getch();
+
+ }
+
+			
+			break;
+
+		case 2:
+			system("cls");
+		   textcolor(4);	cprintf("                             INSTRUCCIONES \n\n");
+textcolor(1);gotoxy(2,3);cprintf("\t"); textcolor(18); cprintf(" Al inicar el juego el helicoptero empesara a caer automaticamente\n\n");
+
+
+textcolor(1);gotoxy(2,5);cprintf("\t"); textcolor(18);  cprintf(" Para subir el helicoptero preciona la tecla hacia ariba\n\n");
+
+textcolor(1);gotoxy(2,7);cprintf("\t"); textcolor(18); cprintf("  Para ganar el juego , el helicoptero no debe tocar los edificios ni los borde que enmarcan el juego ");
+
+			getch();
+			break;
+		case 3:
+			
+			break;
+		
+		
+		default:
+			system("cls");
+			printf("la opciones que ingreso no es correcta");
+			getch();
+			break;
+		
+	}
+	
+}
+while(sal !=3);
+
+return 0;
+	
+	}
+	
+	
